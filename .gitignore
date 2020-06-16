@@ -1,1 +1,6 @@
-*/*/target
+*/*/target/*
+*.bin
+*/target/*
+target/*
+*/*/*/target
+/target/
