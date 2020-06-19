@@ -1,0 +1,33 @@
+// version of protocol buffer used
+syntax = "proto3";
+
+// package name for the buffer will be used later
+import "items.proto";
+package book_service;
+
+message AddBookRequest {
+   items.Book book = 1;
+}
+
+message GetBookByWordInTitle {
+    string word = 1;
+}
+
+message DefaultResponse{
+    oneof reply {
+        bool ok = 1;
+        string error = 2;
+    }
+}
+
+message BookRequest {
+    int64 offset=1;
+    int64 limit=2;
+}
+
+service BookService {
+    // Add a book a new book
+    rpc AddBook(AddBookRequest) returns (DefaultResponse);
+    // Returns a stream of books where the title contains the parametered word.
+    rpc GetBookByWordInTitle(GetBookByWordInTitle) returns (stream items.Book);
+}

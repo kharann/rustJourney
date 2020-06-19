@@ -1,0 +1,15 @@
+// version of protocol buffer used
+syntax = "proto3";
+
+package items;
+
+// package name for the buffer will be used later
+
+message Book {
+    string title= 1;
+    string author = 2;
+    enum genre {
+        FANTASY = 0;
+        CRIME = 1;
+    }
+}

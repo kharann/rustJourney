@@ -1,0 +1,12 @@
+[package]
+name = "diesel-db"
+version = "0.1.0"
+authors = ["52c93648f8fbdac66640cf9cbe47f4bd988dbcc2 <anhkhav@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+diesel = { version = "1.4", features = ["postgres"] }
+dotenv = "0.15.0"
+grpc-api = {path= "../grpc-api"}
